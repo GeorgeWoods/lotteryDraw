@@ -1,0 +1,179 @@
+import java.util.Scanner;
+
+public class lotteryDraw
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Welcome to the lottery draw!");
+        System.out.println("Please chose your first number between 1 and 49:");
+        int firstNumber = input.nextInt();
+        while(firstNumber > 49 || firstNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            firstNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your second number between 1 and 49:");
+        int secondNumber = input.nextInt();
+        while(secondNumber > 49 || secondNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            secondNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your third number between 1 and 49:");
+        int thirdNumber = input.nextInt();
+        while(thirdNumber > 49 || thirdNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            thirdNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your fourth number between 1 and 49:");
+        int fourthNumber = input.nextInt();
+        while(fourthNumber > 49 || fourthNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            fourthNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your fifth number between 1 and 49:");
+        int fifthNumber = input.nextInt();
+        while(fifthNumber > 49 || fifthNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            fifthNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your sixth number between 1 and 49:");
+        int sixthNumber = input.nextInt();
+        while(sixthNumber > 49 || sixthNumber < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            sixthNumber = input.nextInt();
+        }
+        
+        System.out.println("Please chose your Bonus Ball number between 1 and 49:");
+        int bonusBall = input.nextInt();
+        while(bonusBall > 49 || bonusBall < 1)
+        {
+            System.out.println("Please make sure your number is between 1 and 49!");
+            bonusBall = input.nextInt();
+        }
+        
+        int no1 = (int) Math.ceil(Math.random() * 49);
+        int no2 = (int) Math.ceil(Math.random() * 49);
+        int no3 = (int) Math.ceil(Math.random() * 49);
+        int no4 = (int) Math.ceil(Math.random() * 49);
+        int no5 = (int) Math.ceil(Math.random() * 49);
+        int no6 = (int) Math.ceil(Math.random() * 49);
+        int bonus = (int) Math.ceil(Math.random() * 49);
+        
+        String numbers = (no1 + "-" + no2 + "-" + no3 + "-" + no4 + "-" + no5 + "-" + no6 + "-" + bonus + "!");
+        System.out.println("The chosen numbers are... " + numbers);
+        System.out.println();
+        
+        int matches = 0;
+        int bonusMatch = 0;
+        if (firstNumber == no1 || firstNumber == no2 || firstNumber == no3 || firstNumber == no4 || firstNumber == no5
+        || firstNumber == no6)
+        {
+            System.out.println("Your first number matched one of our numbers!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your first number was not the same as one of our numbers!");
+        }
+        if (secondNumber == no1 || secondNumber == no2 || secondNumber == no3 || secondNumber == no4 || 
+        secondNumber == no5 || secondNumber == no6)
+        {
+            System.out.println("Your second number matched one of our numbers!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your second number was not the same as one of our numbers!");
+        }
+        if (thirdNumber == no1 || thirdNumber == no2 || thirdNumber == no3 || thirdNumber == no4 || thirdNumber == no5
+        || thirdNumber == no6)
+        {
+            System.out.println("Your third number matched one of our numbers!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your third number was not the same as one of our numbers!");
+        }
+        if (fourthNumber == no1 || fourthNumber == no2 || fourthNumber == no3 || fourthNumber == no4 || 
+        fourthNumber == no5 || fourthNumber == no6)
+        {
+            System.out.println("Your fourth numbers matched one of our numbers!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your fourth number was not the same as one of our numbers!");
+        }
+        if (fifthNumber == no1 || fifthNumber == no2 || fifthNumber == no3 || fifthNumber == no4 || fifthNumber == no5 
+        || fifthNumber == no6)
+        {
+            System.out.println("Your fifth number matched one of our numbers!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your fifth number was not the same as one of our numbers!");
+        }
+        if (sixthNumber == no1 || sixthNumber == no2 || sixthNumber == no3 || sixthNumber == no4 || sixthNumber == no5 
+        || sixthNumber == no6)
+        {
+            System.out.println("Your sixth number matched one of our numebrs!");
+            matches ++;
+        }
+        else
+        {
+            System.out.println("Your sixth number was not the same as one of our numbers!");
+        }
+        if (bonusBall == bonus)
+        {
+            System.out.println("You guessed the bonus ball correctly!");
+            bonusMatch ++;
+        }
+        else
+        {
+            System.out.println("You guessed the bonus ball incorrectly");
+        }
+        
+        System.out.println();
+        
+        if (matches < 3)
+        {
+            System.out.println("Unfortunately you did not win any money today.");
+            System.out.println("Why not play again and see if you can win next time?");
+        }
+        if (matches == 3)
+        {
+            System.out.println("Congratulations! You have won £10 for matching 3 numbers!");
+        }
+        if (matches == 4)
+        {
+            System.out.println("Congratulations! You have won £100 for matching 4 numbers!");
+        }
+        if (matches == 5)
+        {
+            System.out.println("Congratulations! You have won £10,000 for matching 5 numbers!");
+        }
+        if (matches == 5 & bonusMatch == 1)
+        {
+            System.out.println("Congratulations! You have won £100,000 for matching 5 numbers and the bonus ball!");
+        }
+        if (matches == 6)
+        {
+            System.out.println("Congratulations! You have won £1,000,000 for matching 6 numbers!");
+        }
+        
+    }
+}
